@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIRVANA - Suara Sebuah Generasi | Tribute & Archive</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;700;900&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        maroon: {
+                            900: '#1d0508',
+                            800: '#2A080C',
+                            700: '#4A0E17',
+                            600: '#6B121F',
+                            500: '#800020',
+                        },
+                        gold: {
+                            400: '#F3E5AB',
+                            500: '#E5C158',
+                            600: '#D4AF37',
+                        },
+                        cream: {
+                            100: '#FAF4EB',
+                            200: '#F5E6D3',
+                            300: '#E8D8C3',
+                        },
+                        charcoal: '#121212',
+                    },
+                    fontFamily: {
+                        bodoni: ['"Bodoni Moda"', 'serif'],
+                        marker: ['"Permanent Marker"', 'cursive'],
+                        mono: ['"Courier Prime"', 'monospace'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Retro Grunge Textures & Overlay Filters */
+        .noise-bg {
+            background-color: #2A080C;
+            background-image: radial-gradient(#4A0E17 15%, transparent 16%), radial-gradient(#121212 15%, transparent 16%);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+        }
+
+        .crt-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            background-size: 100% 3px, 6px 100%;
+            pointer-events: none;
+            z-index: 99;
+            opacity: 0.6;
+        }
+
+        .text-distressed {
+            text-shadow: 2px 2px 0px #800020, -2px -2px 0px #121212;
+            letter-spacing: -0.05em;
+        }
+
+        .tape-effect {
+            background-color: rgba(245, 230, 211, 0.85);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+            transform: rotate(-1.5deg);
+        }
+
+        /* Vinyl Flip Card 3D Effect */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        .flip-card-inner {
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            backface-visibility: hidden;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+
+        /* Vinyl Spin Animation */
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 12s linear infinite;
+        }
+        .paused {
+            animation-play-state: paused;
+        }
+
+        /* Sound Wave Bar Animation */
+        @keyframes wave {
+            0%, 100% { height: 4px; }
+            50% { height: 24px; }
+        }
+        .wave-bar {
+            animation: wave 1.2s ease-in-out infinite;
+        }
+        .wave-bar:nth-child(2) { animation-delay: 0.2s; }
+        .wave-bar:nth-child(3) { animation-delay: 0.4s; }
+        .wave-bar:nth-child(4) { animation-delay: 0.1s; }
+        .wave-bar:nth-child(5) { animation-delay: 0.3s; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #121212;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6B121F;
+            border: 1px solid #D4AF37;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #800020;
+        }
+
+        /* Photo Filters */
+        .filter-bw { filter: grayscale(100%) contrast(120%); }
+        .filter-grain { filter: sepia(40%) contrast(130%) brightness(90%); }
+        .filter-sepia { filter: sepia(90%) hue-rotate(-30deg) saturate(140%); }
+    </style>
+</head>
+<body class="bg-maroon-900 text-cream-200 font-sans selection:bg-gold-600 selection:text-maroon-900 relative overflow-x-hidden">
+
+    <!-- CRT Visual Effect Overlay -->
+    <div class="crt-overlay"></div>
+
+    <nav class="sticky top-0 z-50 bg-maroon-800/90 backdrop-blur-md border-b-2 border-gold-600/40 px-4 py-3 shadow-2xl">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center">
+            <a href="#" class="flex items-center gap-2 group">
+                <!-- Smiley Logo -->
+                <div class="w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center text-maroon-900 font-black text-xl border-2 border-cream-200 transform group-hover:rotate-12 transition">
+                    x_x
+                </div>
+                <span class="font-bodoni font-black text-2xl tracking-widest text-gold-500 uppercase group-hover:text-cream-100 transition">NIRVANA</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-6 font-mono text-sm">
+                <a href="#about" class="hover:text-gold-500 transition border-b border-transparent hover:border-gold-500 py-1">Sejarah</a>
+                <a href="#discography" class="hover:text-gold-500 transition border-b border-transparent hover:border-gold-500 py-1">Diskografi</a>
+                <a href="#legacy" class="hover:text-gold-500 transition border-b border-transparent hover:border-gold-500 py-1">Warisan</a>
+                <a href="#moments" class="hover:text-gold-500 transition border-b border-transparent hover:border-gold-500 py-1">Konser</a>
+                <a href="#fan-zone" class="hover:text-gold-500 transition border-b border-transparent hover:border-gold-500 py-1">Fan Zone</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="#soundboard" class="bg-gold-600 hover:bg-gold-500 text-maroon-900 font-bold px-3 py-1.5 rounded text-xs uppercase tracking-wider font-mono shadow-md transform hover:-translate-y-0.5 transition flex items-center gap-2">
+                    <i class="fa-solid fa-guitar"></i> Fuzz Pedal
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative min-h-[90vh] noise-bg flex items-center justify-center border-b-4 border-gold-600 overflow-hidden px-4 py-16">
+        <!-- Background Ambient Image -->
+        <div class="absolute inset-0 opacity-25 mix-blend-overlay">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1600" alt="Concert Stage Background" class="w-full h-full object-cover">
+        </div>
+
+        <div class="max-w-5xl mx-auto text-center relative z-10 flex flex-col items-center">
+            <!-- Retro Tape Badge -->
+            <div class="tape-effect text-maroon-900 font-mono font-bold px-6 py-2 text-sm md:text-base uppercase tracking-widest mb-6 inline-block">
+                ★ 1987 - 1994 • Aberdeen, Washington ★
+            </div>
+
+            <!-- Main Band Title -->
+            <h1 class="font-bodoni font-black text-6xl md:text-9xl text-gold-500 text-distressed uppercase tracking-tight mb-4 transform -skew-x-3">
+                NIRVANA
+            </h1>
+
+            <p class="font-marker text-xl md:text-3xl text-cream-200 mb-8 max-w-2xl leading-relaxed">
+                "Suara Sebuah Generasi & Revolusi Musik Grunge 90-an"
+            </p>
+
+            <!-- Interactive Cassette Player Widget -->
+            <div class="w-full max-w-xl bg-charcoal/90 border-2 border-gold-600 rounded-lg p-5 shadow-2xl backdrop-blur-sm relative">
+                <div class="flex items-center justify-between border-b border-maroon-700 pb-3 mb-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-tape text-gold-500 text-2xl"></i>
+                        <span class="font-mono text-xs text-gold-500 tracking-wider">CASSETTE DECK SYSTEM - 90s ANALOG</span>
+                    </div>
+                    <!-- Audio Wave Visualization -->
+                    <div id="wave-container" class="flex items-center gap-1 h-6">
+                        <div class="wave-bar w-1 bg-gold-500 rounded-full paused"></div>
+                        <div class="wave-bar w-1 bg-gold-500 rounded-full paused"></div>
+                        <div class="wave-bar w-1 bg-gold-500 rounded-full paused"></div>
+                        <div class="wave-bar w-1 bg-gold-500 rounded-full paused"></div>
+                        <div class="wave-bar w-1 bg-gold-500 rounded-full paused"></div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center gap-4">
+                    <!-- Cassette Window Graphic -->
+                    <div class="w-full sm:w-1/3 bg-maroon-900 border border-gold-600/50 rounded p-2 flex justify-around items-center h-20">
+                        <div id="cassette-reel-left" class="w-12 h-12 rounded-full border-4 border-dashed border-gold-500 flex items-center justify-center">
+                            <div class="w-4 h-4 bg-cream-300 rounded-full"></div>
+                        </div>
+                        <div id="cassette-reel-right" class="w-12 h-12 rounded-full border-4 border-dashed border-gold-500 flex items-center justify-center">
+                            <div class="w-4 h-4 bg-cream-300 rounded-full"></div>
+                        </div>
+                    </div>
+
+                    <!-- Song Controls & Track Selector -->
+                    <div class="w-full sm:w-2/3 flex flex-col gap-2">
+                        <select id="hero-track-select" class="bg-maroon-800 text-cream-200 border border-gold-600/60 rounded px-3 py-1.5 font-mono text-xs focus:outline-none focus:border-gold-500">
+                            <option value="teen-spirit">Smells Like Teen Spirit (Grunge Synth Riff)</option>
+                            <option value="come-as-you-are">Come As You Are (Chorus Bass Synth)</option>
+                            <option value="in-bloom">In Bloom (Heavy Beat Riff)</option>
+                            <option value="lithium">Lithium (Melodic Synth Demo)</option>
+                        </select>
+
+                        <div class="flex items-center justify-between gap-2 mt-2">
+                            <button id="hero-play-btn" class="flex-1 bg-maroon-700 hover:bg-maroon-600 border border-gold-500 text-gold-500 font-mono py-2 rounded text-xs font-bold transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-play"></i> <span id="play-btn-text">PUTAR PREVIEW</span>
+                            </button>
+                            <button id="hero-stop-btn" class="bg-maroon-800 hover:bg-maroon-700 border border-cream-300/40 text-cream-200 px-4 py-2 rounded text-xs font-mono transition">
+                                <i class="fa-solid fa-stop"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="py-20 px-4 bg-maroon-800/80 border-b border-gold-600/30 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="font-mono text-gold-500 uppercase tracking-widest text-sm">— PROFIL & SEJARAH SINGKAT —</span>
+                <h2 class="font-bodoni text-4xl md:text-5xl font-bold text-cream-100 mt-2">Perjalanan Sang Legend</h2>
+                <div class="w-24 h-1 bg-gold-600 mx-auto mt-4"></div>
+            </div>
+
+            <!-- Interactive Timeline Tabs -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
+                <button onclick="switchEra('era-1')" id="btn-era-1" class="era-btn active bg-maroon-700 border-2 border-gold-500 text-gold-500 p-4 rounded text-left transition hover:bg-maroon-600">
+                    <span class="font-mono text-xs block text-cream-300">1987 - 1989</span>
+                    <strong class="font-bodoni text-lg block">Awal Mula & Era Bleach</strong>
+                </button>
+                <button onclick="switchEra('era-2')" id="btn-era-2" class="era-btn bg-maroon-900 border border-gold-600/30 text-cream-200 p-4 rounded text-left transition hover:bg-maroon-700">
+                    <span class="font-mono text-xs block text-cream-300">1990 - 1991</span>
+                    <strong class="font-bodoni text-lg block">Dave Grohl & Nevermind Boom</strong>
+                </button>
+                <button onclick="switchEra('era-3')" id="btn-era-3" class="era-btn bg-maroon-900 border border-gold-600/30 text-cream-200 p-4 rounded text-left transition hover:bg-maroon-700">
+                    <span class="font-mono text-xs block text-cream-300">1993</span>
+                    <strong class="font-bodoni text-lg block">In Utero & Pengakuan Global</strong>
+                </button>
+                <button onclick="switchEra('era-4')" id="btn-era-4" class="era-btn bg-maroon-900 border border-gold-600/30 text-cream-200 p-4 rounded text-left transition hover:bg-maroon-700">
+                    <span class="font-mono text-xs block text-cream-300">1993 - 1994</span>
+                    <strong class="font-bodoni text-lg block">MTV Unplugged & Warisan Abadi</strong>
+                </button>
+            </div>
+
+            <!-- Era Content Display Box -->
+            <div class="bg-charcoal/80 border-2 border-gold-600 p-6 md:p-8 rounded-lg shadow-2xl relative min-h-[250px] flex flex-col md:flex-row gap-8 items-center">
+                <div class="w-full md:w-1/3">
+                    <img id="era-image" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800" alt="Nirvana Era Image" class="rounded border-2 border-gold-500 shadow-md w-full h-64 object-cover filter grayscale">
+                </div>
+                <div class="w-full md:w-2/3 flex flex-col justify-center">
+                    <h3 id="era-title" class="font-bodoni text-3xl font-bold text-gold-500 mb-3">1987 - 1989: Awal Mula & Sub Pop</h3>
+                    <p id="era-description" class="text-cream-200 font-sans leading-relaxed mb-4">
+                        Dibentuk oleh **Kurt Cobain** dan **Krist Novoselic** di Aberdeen, Washington. Mengusung suara underground Seattle yang kasar, berat, dan memadukan energi punk rock dengan riff metal. Mengeluarkan album debut *Bleach* (1989) di bawah label independen Sub Pop hanya dengan biaya rekaman sekitar $606.17.
+                    </p>
+                    <div class="flex items-center gap-2 font-mono text-xs text-gold-400 bg-maroon-900/80 px-3 py-2 rounded border border-gold-600/40 self-start">
+                        <i class="fa-solid fa-key"></i> <span id="era-highlight">Kunci Utama: Raw Sound, Sub Pop Records, Chad Channing pada drum.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Band Members Section -->
+            <div class="mt-20">
+                <h3 class="font-bodoni text-3xl font-bold text-center text-cream-100 mb-10">Anggota Utama Band</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Kurt Cobain Card -->
+                    <div class="bg-maroon-900 border border-gold-600/50 rounded-lg overflow-hidden group hover:border-gold-500 transition duration-300 shadow-xl">
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="https://i.pinimg.com/736x/f4/e2/20/f4e220a468d9204d8f06840ebf8a9044.jpg" alt="Kurt Cobain" class="w-full h-full object-cover filter grayscale group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-maroon-900 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-3 font-marker text-gold-500 text-2xl">Kurt Cobain</span>
+                        </div>
+                        <div class="p-5 font-mono text-xs">
+                            <p class="text-gold-400 mb-1"><strong>Peran:</strong> Vokal Utama & Gitaris Utama</p>
+                            <p class="text-cream-300 mb-3"><strong>Instrumen Utama:</strong> Fender Jag-Stang, Mustang, Boss DS-1 Fuzz</p>
+                            <p class="text-cream-200 italic font-sans border-l-2 border-gold-500 pl-3 my-2">
+                                "Saya lebih baik dibenci karena menjadi diri sendiri, daripada dicintai karena menjadi orang lain."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Krist Novoselic Card -->
+                    <div class="bg-maroon-900 border border-gold-600/50 rounded-lg overflow-hidden group hover:border-gold-500 transition duration-300 shadow-xl">
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="https://i.pinimg.com/1200x/29/64/78/2964789fcfedd8c56fa2d50e51fc9b78.jpg" alt="Krist Novoselic" class="w-full h-full object-cover filter grayscale group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-maroon-900 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-3 font-marker text-gold-500 text-2xl">Krist Novoselic</span>
+                        </div>
+                        <div class="p-5 font-mono text-xs">
+                            <p class="text-gold-400 mb-1"><strong>Peran:</strong> Bassis & Backing Vocal</p>
+                            <p class="text-cream-300 mb-3"><strong>Instrumen Utama:</strong> Gibson RD Artist Bass, Ampeg SVT</p>
+                            <p class="text-cream-200 italic font-sans border-l-2 border-gold-500 pl-3 my-2">
+                                "Nirvana tidak pernah berencana menjadi besar. Kami hanya memainkan musik apa adanya."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Dave Grohl Card -->
+                    <div class="bg-maroon-900 border border-gold-600/50 rounded-lg overflow-hidden group hover:border-gold-500 transition duration-300 shadow-xl">
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="https://i.pinimg.com/1200x/cf/f5/98/cff59812a2edf4adf2c77ea1ddea626b.jpg" alt="Dave Grohl" class="w-full h-full object-cover filter grayscale group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-maroon-900 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-3 font-marker text-gold-500 text-2xl">Dave Grohl</span>
+                        </div>
+                        <div class="p-5 font-mono text-xs">
+                            <p class="text-gold-400 mb-1"><strong>Peran:</strong> Drummer & Backing Vocal</p>
+                            <p class="text-cream-300 mb-3"><strong>Instrumen Utama:</strong> Tama Artstar II Drum Kit, Zildjian Cymbals</p>
+                            <p class="text-cream-200 italic font-sans border-l-2 border-gold-500 pl-3 my-2">
+                                "Kurt menulis lagu-lagu yang menyentuh hati jutaan orang tanpa pernah memikirkannya."
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="discography" class="py-20 px-4 noise-bg border-b border-gold-600/30">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="font-mono text-gold-500 uppercase tracking-widest text-sm">— DISKOGRAFI UTAMA —</span>
+                <h2 class="font-bodoni text-4xl md:text-5xl font-bold text-cream-100 mt-2">Album & Karya Ikonik</h2>
+                <p class="text-cream-300 font-mono text-xs mt-2">Klik pada kartu album untuk membalik dan melihat tracklist!</p>
+                <div class="w-24 h-1 bg-gold-600 mx-auto mt-4"></div>
+            </div>
+
+            <!-- Album Grid (Interactive Flip Cards) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Album 1: Bleach -->
+                <div class="flip-card h-[420px] cursor-pointer perspective-1000" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner relative w-full h-full rounded-lg shadow-2xl border-2 border-gold-600/50">
+                        <!-- Front -->
+                        <div class="flip-card-front absolute inset-0 bg-maroon-900 p-5 flex flex-col justify-between rounded-lg">
+                            <div>
+                                <div class="bg-gold-500 text-maroon-900 font-mono text-xs font-bold px-2 py-1 rounded inline-block mb-3">1989 • STUDIO ALBUM</div>
+                                <h3 class="font-bodoni text-3xl font-bold text-gold-500">BLEACH</h3>
+                                <p class="text-cream-300 font-mono text-xs">Sub Pop Records</p>
+                            </div>
+                            <div class="relative my-4 flex items-center justify-center">
+                                <img src="https://i.pinimg.com/736x/e3/bd/50/e3bd50c85abb33172e4047de531cdf7b.jpg" alt="Bleach Album Cover" class="w-48 h-48 object-cover rounded shadow-lg border border-gold-600/30 filter grayscale">
+                                <i class="fa-solid fa-arrows-rotate absolute text-cream-100 text-2xl bg-charcoal/70 p-2 rounded-full"></i>
+                            </div>
+                            <div class="text-center font-mono text-xs text-gold-400">
+                                Klik untuk Detail & Tracklist ➔
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="flip-card-back absolute inset-0 bg-charcoal p-5 flex flex-col justify-between rounded-lg border border-gold-500 text-left">
+                            <div>
+                                <h4 class="font-bodoni text-2xl text-gold-500 mb-2">BLEACH (1989)</h4>
+                                <p class="text-xs text-cream-300 mb-3 font-sans">Album mentah dengan pengaruh heavymetal & punk underground. Diproduseri oleh Jack Endino.</p>
+                                <strong class="font-mono text-xs text-gold-400 block mb-1">Tracklist Pilihan:</strong>
+                                <ul class="font-mono text-xs text-cream-200 list-disc list-inside space-y-1">
+                                    <li>Blew</li>
+                                    <li>About a Girl</li>
+                                    <li>School</li>
+                                    <li>Love Buzz</li>
+                                    <li>Negative Creep</li>
+                                </ul>
+                            </div>
+                            <div class="bg-maroon-900 p-2 rounded text-center border border-gold-600/30">
+                                <span class="font-mono text-xs text-gold-500">Produser: Jack Endino • Biaya: $606.17</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Album 2: Nevermind -->
+                <div class="flip-card h-[420px] cursor-pointer perspective-1000" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner relative w-full h-full rounded-lg shadow-2xl border-2 border-gold-500">
+                        <!-- Front -->
+                        <div class="flip-card-front absolute inset-0 bg-maroon-900 p-5 flex flex-col justify-between rounded-lg">
+                            <div>
+                                <div class="bg-gold-500 text-maroon-900 font-mono text-xs font-bold px-2 py-1 rounded inline-block mb-3">1991 • BREAKTHROUGH</div>
+                                <h3 class="font-bodoni text-3xl font-bold text-gold-500">NEVERMIND</h3>
+                                <p class="text-cream-300 font-mono text-xs">DGC / Geffen Records</p>
+                            </div>
+                            <div class="relative my-4 flex items-center justify-center">
+                                <img src="https://i.pinimg.com/736x/7a/f3/10/7af31096b6b85f505d8049f88ac85a15.jpg" alt="Nevermind Album Cover" class="w-48 h-48 object-cover rounded shadow-lg border border-gold-600/30">
+                                <i class="fa-solid fa-arrows-rotate absolute text-cream-100 text-2xl bg-charcoal/70 p-2 rounded-full"></i>
+                            </div>
+                            <div class="text-center font-mono text-xs text-gold-400">
+                                Klik untuk Detail & Tracklist ➔
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="flip-card-back absolute inset-0 bg-charcoal p-5 flex flex-col justify-between rounded-lg border border-gold-500 text-left">
+                            <div>
+                                <h4 class="font-bodoni text-2xl text-gold-500 mb-2">NEVERMIND (1991)</h4>
+                                <p class="text-xs text-cream-300 mb-3 font-sans">Fenomena global yang menjual lebih dari 30 juta kopi dan mengubah peta musik dunia.</p>
+                                <strong class="font-mono text-xs text-gold-400 block mb-1">Tracklist Pilihan:</strong>
+                                <ul class="font-mono text-xs text-cream-200 list-disc list-inside space-y-1">
+                                    <li>Smells Like Teen Spirit</li>
+                                    <li>In Bloom</li>
+                                    <li>Come as You Are</li>
+                                    <li>Breed</li>
+                                    <li>Lithium</li>
+                                    <li>Polly</li>
+                                </ul>
+                            </div>
+                            <div class="bg-maroon-900 p-2 rounded text-center border border-gold-600/30">
+                                <span class="font-mono text-xs text-gold-500">Produser: Butch Vig • Status: Diamond</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Album 3: In Utero -->
+                <div class="flip-card h-[420px] cursor-pointer perspective-1000" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner relative w-full h-full rounded-lg shadow-2xl border-2 border-gold-600/50">
+                        <!-- Front -->
+                        <div class="flip-card-front absolute inset-0 bg-maroon-900 p-5 flex flex-col justify-between rounded-lg">
+                            <div>
+                                <div class="bg-gold-500 text-maroon-900 font-mono text-xs font-bold px-2 py-1 rounded inline-block mb-3">1993 • FINAL STUDIO</div>
+                                <h3 class="font-bodoni text-3xl font-bold text-gold-500">IN UTERO</h3>
+                                <p class="text-cream-300 font-mono text-xs">DGC / Geffen Records</p>
+                            </div>
+                            <div class="relative my-4 flex items-center justify-center">
+                                <img src="https://i.pinimg.com/1200x/77/c8/de/77c8de0a3e06389c07c8278eb92306ae.jpg" alt="In Utero Album Cover" class="w-48 h-48 object-cover rounded shadow-lg border border-gold-600/30 filter sepia">
+                                <i class="fa-solid fa-arrows-rotate absolute text-cream-100 text-2xl bg-charcoal/70 p-2 rounded-full"></i>
+                            </div>
+                            <div class="text-center font-mono text-xs text-gold-400">
+                                Klik untuk Detail & Tracklist ➔
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="flip-card-back absolute inset-0 bg-charcoal p-5 flex flex-col justify-between rounded-lg border border-gold-500 text-left">
+                            <div>
+                                <h4 class="font-bodoni text-2xl text-gold-500 mb-2">IN UTERO (1993)</h4>
+                                <p class="text-xs text-cream-300 mb-3 font-sans">Kembali ke akar eksperimental dan kasar dengan diproduseri oleh musisi punk legendaris Steve Albini.</p>
+                                <strong class="font-mono text-xs text-gold-400 block mb-1">Tracklist Pilihan:</strong>
+                                <ul class="font-mono text-xs text-cream-200 list-disc list-inside space-y-1">
+                                    <li>Serve the Servants</li>
+                                    <li>Heart-Shaped Box</li>
+                                    <li>Rape Me</li>
+                                    <li>Dumb</li>
+                                    <li>Pennyroyal Tea</li>
+                                    <li>All Apologies</li>
+                                </ul>
+                            </div>
+                            <div class="bg-maroon-900 p-2 rounded text-center border border-gold-600/30">
+                                <span class="font-mono text-xs text-gold-500">Produser: Steve Albini</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Interactive Song Meaning Explorer -->
+            <div class="mt-20 bg-charcoal/90 border-2 border-gold-600 rounded-lg p-6 md:p-8">
+                <h3 class="font-bodoni text-3xl font-bold text-gold-500 mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-compact-disc"></i> Song Meaning & Lore Explorer
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="flex flex-col gap-2">
+                        <button onclick="showSongLore('teen-spirit')" class="song-lore-btn text-left bg-maroon-800 border-l-4 border-gold-500 p-3 rounded font-mono text-xs hover:bg-maroon-700 transition">
+                            Smells Like Teen Spirit
+                        </button>
+                        <button onclick="showSongLore('come-as-you-are')" class="song-lore-btn text-left bg-maroon-900/60 border-l-4 border-transparent p-3 rounded font-mono text-xs hover:bg-maroon-700 transition">
+                            Come As You Are
+                        </button>
+                        <button onclick="showSongLore('heart-shaped-box')" class="song-lore-btn text-left bg-maroon-900/60 border-l-4 border-transparent p-3 rounded font-mono text-xs hover:bg-maroon-700 transition">
+                            Heart-Shaped Box
+                        </button>
+                        <button onclick="showSongLore('lithium')" class="song-lore-btn text-left bg-maroon-900/60 border-l-4 border-transparent p-3 rounded font-mono text-xs hover:bg-maroon-700 transition">
+                            Lithium
+                        </button>
+                    </div>
+
+                    <div id="song-lore-content" class="md:col-span-2 bg-maroon-900/80 p-5 rounded border border-gold-600/30 font-sans">
+                        <h4 class="font-bodoni text-2xl font-bold text-gold-500 mb-2">Smells Like Teen Spirit</h4>
+                        <p class="text-xs font-mono text-cream-300 mb-3">Album: Nevermind (1991) • Rilis: 10 September 1991</p>
+                        <p class="text-sm text-cream-200 leading-relaxed mb-4">
+                            Judul lagu ini berasal dari tulisan dinding teman Kurt, Kathleen Hanna (vokalis Bikini Kill), yang menuliskan *"Kurt Smells Like Teen Spirit"*. Kurt mengira itu adalah slogan revolusioner, padahal "Teen Spirit" adalah merek deorodan wanita yang dipakai pacar Kurt saat itu.
+                        </p>
+                        <div class="bg-charcoal p-3 rounded font-mono text-xs text-gold-400">
+                            <strong>Setup Alat / Sound:</strong> Fender Mustang/Jaguar + Boss DS-1 Distortion + Electro-Harmonix Small Clone Chorus.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="legacy" class="py-20 px-4 bg-maroon-800/80 border-b border-gold-600/30">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="font-mono text-gold-500 uppercase tracking-widest text-sm">— WARISAN & DAMPAK BUDAYA —</span>
+                <h2 class="font-bodoni text-4xl md:text-5xl font-bold text-cream-100 mt-2">Revolusi Budaya Grunge</h2>
+                <div class="w-24 h-1 bg-gold-600 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-maroon-900 p-6 rounded-lg border border-gold-600/40 relative hover:border-gold-500 transition">
+                    <div class="w-12 h-12 bg-gold-500 rounded flex items-center justify-center text-maroon-900 text-2xl mb-4 font-bold">
+                        <i class="fa-solid fa-record-vinyl"></i>
+                    </div>
+                    <h3 class="font-bodoni text-2xl font-bold text-gold-500 mb-3">Menumbangkan Hair Metal</h3>
+                    <p class="text-sm text-cream-200 leading-relaxed font-sans">
+                        Di awal tahun 90-an, popularitas *Nevermind* berhasil menggeser album Michael Jackson dari puncak tangga lagu Billboard dan mengakhiri era *hair metal* 80-an yang glamor, menggantikannya dengan musik yang lebih jujur dan autentik.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-maroon-900 p-6 rounded-lg border border-gold-600/40 relative hover:border-gold-500 transition">
+                    <div class="w-12 h-12 bg-gold-500 rounded flex items-center justify-center text-maroon-900 text-2xl mb-4 font-bold">
+                        <i class="fa-solid fa-shirt"></i>
+                    </div>
+                    <h3 class="font-bodoni text-2xl font-bold text-gold-500 mb-3">Estetika Mode Anti-Fashion</h3>
+                    <p class="text-sm text-cream-200 leading-relaxed font-sans">
+                        Kemeja flanel bergaris, celana jeans robek, sepatu Converse lusuh, dan rambut terurai acak menjadi simbol tren *grunge fashion* global yang menolak kemewahan berlebihan industri hiburan.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-maroon-900 p-6 rounded-lg border border-gold-600/40 relative hover:border-gold-500 transition">
+                    <div class="w-12 h-12 bg-gold-500 rounded flex items-center justify-center text-maroon-900 text-2xl mb-4 font-bold">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="font-bodoni text-2xl font-bold text-gold-500 mb-3">Pengaruh Generasional</h3>
+                    <p class="text-sm text-cream-200 leading-relaxed font-sans">
+                        Nirvana memberi keberanian pada ribuan band alternatif, pop-punk, hingga indie rock modern (seperti Foo Fighters, Weezer, Green Day, Seether, hingga Post Malone) untuk menciptakan karya sendiri.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="moments" class="py-20 px-4 noise-bg border-b border-gold-600/30">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="font-mono text-gold-500 uppercase tracking-widest text-sm">— MOMEN & KONSER HISTORIS —</span>
+                <h2 class="font-bodoni text-4xl md:text-5xl font-bold text-cream-100 mt-2">Penampilan Legendaris</h2>
+                <div class="w-24 h-1 bg-gold-600 mx-auto mt-4"></div>
+            </div>
+
+            <!-- Live Concert Vault Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                
+                <div class="bg-maroon-900 border border-gold-600/40 rounded overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=600" alt="Reading Festival 1992" class="w-full h-48 object-cover filter grayscale group-hover:filter-none transition duration-500">
+                    <div class="p-4">
+                        <span class="font-mono text-xs text-gold-500">30 AGUSTUS 1992</span>
+                        <h4 class="font-bodoni text-xl font-bold text-cream-100">Live at Reading Festival</h4>
+                        <p class="text-xs text-cream-300 mt-2">Kurt didorong menggunakan kursi roda memakai baju rumah sakit sebagai sindiran rumor kesehatannya, lalu membawakan salah satu konser terbaik dalam sejarah rock.</p>
+                    </div>
+                </div>
+
+                <div class="bg-maroon-900 border border-gold-600/40 rounded overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=600" alt="MTV Unplugged 1993" class="w-full h-48 object-cover filter grayscale group-hover:filter-none transition duration-500">
+                    <div class="p-4">
+                        <span class="font-mono text-xs text-gold-500">18 NOVEMBER 1993</span>
+                        <h4 class="font-bodoni text-xl font-bold text-cream-100">MTV Unplugged in NY</h4>
+                        <p class="text-xs text-cream-300 mt-2">Panggung dihiasi lilin dan bunga lily hitam. Nirvana memainkan versi akustik mendalam termasuk cover legendaris David Bowie "Where Did You Sleep Last Night".</p>
+                    </div>
+                </div>
+
+                <div class="bg-maroon-900 border border-gold-600/40 rounded overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=600" alt="Live at the Paramount 1991" class="w-full h-48 object-cover filter grayscale group-hover:filter-none transition duration-500">
+                    <div class="p-4">
+                        <span class="font-mono text-xs text-gold-500">31 OKTOBER 1991</span>
+                        <h4 class="font-bodoni text-xl font-bold text-cream-100">Live at the Paramount</h4>
+                        <p class="text-xs text-cream-300 mt-2">Konser Halloween ikonik di kampung halaman Seattle tepat saat gelombang kepopuleran album *Nevermind* baru saja meledak secara global.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="soundboard" class="py-20 px-4 bg-maroon-800/90 border-b border-gold-600/30">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="font-mono text-gold-500 uppercase tracking-widest text-sm">— FITUR INTERAKTIF —</span>
+            <h2 class="font-bodoni text-4xl font-bold text-cream-100 mt-2">Grunge Fuzz Synthesizer Pedal</h2>
+            <p class="text-cream-300 font-mono text-xs mt-2 mb-8">Tekan tombol di bawah untuk menghasilkan efek audio gitar/distortion khas grunge secara lansung!</p>
+
+            <div class="bg-charcoal border-4 border-gold-600 rounded-xl p-6 md:p-8 shadow-2xl relative">
+                <!-- Pedal Design Top -->
+                <div class="flex justify-between items-center border-b border-maroon-700 pb-4 mb-6">
+                    <span class="font-marker text-2xl text-gold-500">DS-1 GRUNGE FUZZ</span>
+                    <div class="w-4 h-4 rounded-full bg-red-600 shadow-[0_0_10px_#ff0000]"></div>
+                </div>
+
+                <!-- Sound Buttons Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <button onclick="playSynthesizedSound(110, 'sawtooth', 0.8)" class="bg-maroon-700 hover:bg-maroon-600 border-2 border-gold-500 text-gold-400 font-mono py-6 rounded-lg active:translate-y-1 transition font-bold shadow-md">
+                        <i class="fa-solid fa-bolt block text-2xl mb-2"></i>
+                        POWER CHORD A
+                    </button>
+                    <button onclick="playSynthesizedSound(146.83, 'sawtooth', 0.8)" class="bg-maroon-700 hover:bg-maroon-600 border-2 border-gold-500 text-gold-400 font-mono py-6 rounded-lg active:translate-y-1 transition font-bold shadow-md">
+                        <i class="fa-solid fa-bolt block text-2xl mb-2"></i>
+                        POWER CHORD D
+                    </button>
+                    <button onclick="playSynthesizedSound(164.81, 'square', 0.6)" class="bg-maroon-700 hover:bg-maroon-600 border-2 border-gold-500 text-gold-400 font-mono py-6 rounded-lg active:translate-y-1 transition font-bold shadow-md">
+                        <i class="fa-solid fa-wave-square block text-2xl mb-2"></i>
+                        FEEDBACK FUZZ
+                    </button>
+                    <button onclick="playSynthesizedSound(82.41, 'triangle', 1.0)" class="bg-maroon-700 hover:bg-maroon-600 border-2 border-gold-500 text-gold-400 font-mono py-6 rounded-lg active:translate-y-1 transition font-bold shadow-md">
+                        <i class="fa-solid fa-drum block text-2xl mb-2"></i>
+                        HEAVY BASS SLAP
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fan-zone" class="py-20 px-4 noise-bg border-b border-gold-600/30">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="font-mono text-gold-500 uppercase tracking-widest text-sm">— KOMUNITAS & FAN ZONE —</span>
+                <h2 class="font-bodoni text-4xl md:text-5xl font-bold text-cream-100 mt-2">Kuis & Dinding Penghormatan</h2>
+                <div class="w-24 h-1 bg-gold-600 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <!-- Trivia Quiz Section -->
+                <div class="bg-maroon-900/90 border-2 border-gold-600 rounded-lg p-6 shadow-xl">
+                    <h3 class="font-bodoni text-2xl font-bold text-gold-500 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-circle-question"></i> Uji Pengetahuan Nirvana Anda
+                    </h3>
+                    
+                    <div id="quiz-container">
+                        <p id="quiz-question" class="font-sans text-sm text-cream-200 mb-4 font-semibold">
+                             Loading Kuis...
+                        </p>
+                        <div id="quiz-options" class="flex flex-col gap-2 mb-4 font-mono text-xs">
+                            <!-- Options rendered dynamically -->
+                        </div>
+                        <div id="quiz-result" class="hidden font-mono text-xs p-3 rounded mb-2"></div>
+                        <button id="next-quiz-btn" onclick="nextQuestion()" class="hidden bg-gold-600 hover:bg-gold-500 text-maroon-900 font-mono text-xs font-bold px-4 py-2 rounded transition">
+                            Pertanyaan Selanjutnya ➔
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Fan Guestbook Wall -->
+                <div class="bg-maroon-900/90 border-2 border-gold-600 rounded-lg p-6 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bodoni text-2xl font-bold text-gold-500 mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-comments"></i> Dinding TRIBUTE Penggemar
+                        </h3>
+                        <p class="text-xs text-cream-300 font-mono mb-4">Tuliskan pesan penghormatan atau kesan Anda tentang karya Nirvana!</p>
+
+                        <!-- Input Form -->
+                        <form id="guestbook-form" class="flex flex-col gap-3 mb-6">
+                            <input type="text" id="gb-name" placeholder="Nama / Inisial Anda" required class="bg-charcoal text-cream-200 border border-gold-600/60 rounded px-3 py-2 text-xs font-mono focus:outline-none focus:border-gold-500">
+                            <textarea id="gb-message" placeholder="Tuliskan pesan tribute Anda..." required rows="2" class="bg-charcoal text-cream-200 border border-gold-600/60 rounded px-3 py-2 text-xs font-mono focus:outline-none focus:border-gold-500"></textarea>
+                            <button type="submit" class="bg-gold-600 hover:bg-gold-500 text-maroon-900 font-mono text-xs font-bold py-2 rounded transition uppercase tracking-wider">
+                                Kirim Pesan Tribute
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Messages Display Area -->
+                    <div id="guestbook-messages" class="space-y-3 max-h-48 overflow-y-auto pr-2 border-t border-maroon-700 pt-3">
+                        <!-- Dynamic Messages -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-charcoal text-cream-300 py-12 px-4 border-t-2 border-gold-600 font-mono text-xs">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <span class="font-bodoni text-2xl font-bold text-gold-500 tracking-wider">NIRVANA TRIBUTE</span>
+                <p class="text-cream-300/70 mt-1">Dibuat untuk memperingati warisan musik Kurt Cobain, Krist Novoselic, & Dave Grohl.</p>
+            </div>
+            <div class="flex gap-4 text-lg text-gold-500">
+                <a href="#" class="hover:text-cream-100 transition"><i class="fa-brands fa-spotify"></i></a>
+                <a href="#" class="hover:text-cream-100 transition"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="hover:text-cream-100 transition"><i class="fa-brands fa-apple"></i></a>
+            </div>
+            <div class="text-center md:text-right text-cream-300/50">
+                &copy; 2026 Nirvana Fan Archive. Situs Non-Komersial.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* Interactive Eras Switching Logic */
+        const eraData = {
+            'era-1': {
+                title: '1987 - 1989: Awal Mula & Sub Pop',
+                description: 'Dibentuk oleh Kurt Cobain dan Krist Novoselic di Aberdeen, Washington. Mengusung suara underground Seattle yang kasar, berat, dan memadukan energi punk rock dengan riff metal. Mengeluarkan album debut Bleach (1989) di bawah label independen Sub Pop dengan biaya $606.17.',
+                highlight: 'Kunci Utama: Raw Sound, Sub Pop Records, Chad Channing pada drum.',
+                image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800'
+            },
+            'era-2': {
+                title: '1990 - 1991: Dave Grohl & Nevermind Boom',
+                description: 'Bergabungnya Dave Grohl memberikan energi drum yang eksplosif. Nirvana menandatangani kontrak dengan DGC Records dan merilis Nevermind (1991). Single "Smells Like Teen Spirit" menjadi lagu kebangsaan pemuda generasi X.',
+                highlight: 'Kunci Utama: Bergabungnya Dave Grohl, Ledakan Fenomena Nevermind.',
+                image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800'
+            },
+            'era-3': {
+                title: '1993: In Utero & Pengakuan Global',
+                description: 'Ingin kembali ke akar punk yang kasar, mereka merekrut produser Steve Albini untuk album In Utero. Album ini menduduki puncak tangga lagu meski mengusung sound lirik yang jujur dan kontroversial.',
+                highlight: 'Kunci Utama: Steve Albini, Sound mentah, Heart-Shaped Box.',
+                image: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=800'
+            },
+            'era-4': {
+                title: '1993 - 1994: MTV Unplugged & Warisan Abadi',
+                description: 'Penampilan akustik bersejarah di MTV Unplugged New York memperlihatkan kedalaman musikalitas Nirvana. Kepergian Kurt Cobain pada April 1994 mengakhiri perjalanan band, namun mengukuhkan warisan abadi mereka.',
+                highlight: 'Kunci Utama: MTV Unplugged, Pengakuan Rock & Roll Hall of Fame.',
+                image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=800'
+            }
+        };
+
+        function switchEra(eraKey) {
+            document.querySelectorAll('.era-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-maroon-700', 'border-2', 'border-gold-500', 'text-gold-500');
+                btn.classList.add('bg-maroon-900', 'border', 'border-gold-600/30', 'text-cream-200');
+            });
+            const activeBtn = document.getElementById(`btn-${eraKey}`);
+            activeBtn.classList.add('active', 'bg-maroon-700', 'border-2', 'border-gold-500', 'text-gold-500');
+
+            const data = eraData[eraKey];
+            document.getElementById('era-title').innerText = data.title;
+            document.getElementById('era-description').innerText = data.description;
+            document.getElementById('era-highlight').innerText = data.highlight;
+            document.getElementById('era-image').src = data.image;
+        }
+
+        /* Song Lore Explorer Logic */
+        const songLoreData = {
+            'teen-spirit': {
+                title: 'Smells Like Teen Spirit',
+                album: 'Album: Nevermind (1991) • Rilis: 10 September 1991',
+                text: 'Judul lagu ini berasal dari tulisan dinding teman Kurt, Kathleen Hanna, yang menuliskan "Kurt Smells Like Teen Spirit". Kurt mengira itu slogan revolusioner, padahal Teen Spirit adalah merek deorodan wanita yang dipakai pacar Kurt saat itu.',
+                gear: 'Fender Mustang/Jaguar + Boss DS-1 Distortion + Electro-Harmonix Small Clone Chorus.'
+            },
+            'come-as-you-are': {
+                title: 'Come As You Are',
+                album: 'Album: Nevermind (1991) • Rilis: 1992',
+                text: 'Membawa pesan tentang penerimaan diri dan kontradiksi sifat manusia. Riff gitar ikonis lagu ini dipengaruhi lagu "Eighties" karya Killing Joke.',
+                gear: 'Fender Stratocaster dengan tuned D standard + Electro-Harmonix Small Clone Chorus Effect.'
+            },
+            'heart-shaped-box': {
+                title: 'Heart-Shaped Box',
+                album: 'Album: In Utero (1993) • Rilis: Agustus 1993',
+                text: 'Lagu yang terinspirasi dari kotak berbentuk hati yang diberikan Courtney Love kepada Kurt. Liriknya kaya akan metafora surealis dan dinamika quiet-loud-quiet khas Nirvana.',
+                gear: 'Fender Jaguar + Tech 21 SansAmp GT2 Distortion.'
+            },
+            'lithium': {
+                title: 'Lithium',
+                album: 'Album: Nevermind (1991) • Rilis: Juli 1992',
+                text: 'Bercerita tentang seseorang yang berpaling ke agama untuk mengatasi depresi. Menggambarkan perubahan emosi yang drastis antara nada lembut dan teriakan kencang.',
+                gear: 'Mesa/Boogie Studio 22 Amp + Boss DS-1.'
+            }
+        };
+
+        function showSongLore(key) {
+            const data = songLoreData[key];
+            const contentDiv = document.getElementById('song-lore-content');
+            contentDiv.innerHTML = `
+                <h4 class="font-bodoni text-2xl font-bold text-gold-500 mb-2">${data.title}</h4>
+                <p class="text-xs font-mono text-cream-300 mb-3">${data.album}</p>
+                <p class="text-sm text-cream-200 leading-relaxed mb-4">${data.text}</p>
+                <div class="bg-charcoal p-3 rounded font-mono text-xs text-gold-400">
+                    <strong>Setup Alat / Sound:</strong> ${data.gear}
+                </div>
+            `;
+        }
+
+        /* Web Audio API Synthetic Cassette Player & Soundboard */
+        let audioCtx = null;
+        let isPlayingHero = false;
+        let activeOscillator = null;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        const heroPlayBtn = document.getElementById('hero-play-btn');
+        const heroStopBtn = document.getElementById('hero-stop-btn');
+        const waveBars = document.querySelectorAll('.wave-bar');
+        const reelLeft = document.getElementById('cassette-reel-left');
+        const reelRight = document.getElementById('cassette-reel-right');
+
+        function toggleHeroPlay() {
+            initAudio();
+            if (isPlayingHero) {
+                stopHeroAudio();
+            } else {
+                startHeroAudio();
+            }
+        }
+
+        function startHeroAudio() {
+            isPlayingHero = true;
+            document.getElementById('play-btn-text').innerText = 'HENTIKAN';
+            waveBars.forEach(bar => bar.classList.remove('paused'));
+            reelLeft.classList.add('animate-spin-slow');
+            reelRight.classList.add('animate-spin-slow');
+
+            // Play simple synth melody loop using Web Audio
+            playSynthRiff();
+        }
+
+        function stopHeroAudio() {
+            isPlayingHero = false;
+            document.getElementById('play-btn-text').innerText = 'PUTAR PREVIEW';
+            waveBars.forEach(bar => bar.classList.add('paused'));
+            reelLeft.classList.remove('animate-spin-slow');
+            reelRight.classList.remove('animate-spin-slow');
+            if (activeOscillator) {
+                activeOscillator.stop();
+                activeOscillator = null;
+            }
+        }
+
+        function playSynthRiff() {
+            if (!isPlayingHero) return;
+            const trackSelect = document.getElementById('hero-track-select').value;
+            let freqs = [110, 110, 146.83, 130.81]; // Default Teen Spirit style riff
+            if (trackSelect === 'come-as-you-are') freqs = [146.83, 146.83, 155.56, 164.81];
+
+            let step = 0;
+            const playStep = () => {
+                if (!isPlayingHero) return;
+                playSynthesizedSound(freqs[step % freqs.length], 'sawtooth', 0.2);
+                step++;
+                setTimeout(playStep, 400);
+            };
+            playStep();
+        }
+
+        heroPlayBtn.addEventListener('click', toggleHeroPlay);
+        heroStopBtn.addEventListener('click', stopHeroAudio);
+
+        function playSynthesizedSound(freq, type = 'sawtooth', duration = 0.5) {
+            initAudio();
+            try {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+
+                osc.type = type;
+                osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+                gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                osc.start();
+                osc.stop(audioCtx.currentTime + duration);
+            } catch (e) {
+                console.log('Audio Context Error', e);
+            }
+        }
+
+        /* Trivia Quiz Logic */
+        const quizQuestions = [
+            {
+                q: "Di kota manakah band Nirvana pertama kali dibentuk?",
+                options: ["Seattle, Washington", "Aberdeen, Washington", "Portland, Oregon", "Los Angeles, California"],
+                answer: 1
+            },
+            {
+                q: "Siapakah produser di balik album fenomena 'Nevermind' (1991)?",
+                options: ["Steve Albini", "Jack Endino", "Butch Vig", "Rick Rubin"],
+                answer: 2
+            },
+            {
+                q: "Berapakah perkiraan biaya awal rekaman album debut 'Bleach' pada tahun 1989?",
+                options: ["$606.17", "$5,000", "$10,000", "$500"],
+                answer: 0
+            }
+        ];
+
+        let currentQIndex = 0;
+
+        function loadQuestion() {
+            const q = quizQuestions[currentQIndex];
+            document.getElementById('quiz-question').innerText = `${currentQIndex + 1}. ${q.q}`;
+            const optionsDiv = document.getElementById('quiz-options');
+            optionsDiv.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'text-left bg-maroon-800 hover:bg-maroon-700 text-cream-200 border border-gold-600/40 p-2 rounded transition';
+                btn.innerText = `${String.fromCharCode(65 + idx)}. ${opt}`;
+                btn.onclick = () => checkAnswer(idx);
+                optionsDiv.appendChild(btn);
+            });
+
+            document.getElementById('quiz-result').classList.add('hidden');
+            document.getElementById('next-quiz-btn').classList.add('hidden');
+        }
+
+        function checkAnswer(selectedIdx) {
+            const q = quizQuestions[currentQIndex];
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.classList.remove('hidden');
+
+            if (selectedIdx === q.answer) {
+                resultDiv.className = 'font-mono text-xs p-3 rounded mb-2 bg-green-900/80 border border-green-500 text-green-200';
+                resultDiv.innerText = "★ JAWABAN BENAR! Anda adalah penggemar sejati Nirvana!";
+            } else {
+                resultDiv.className = 'font-mono text-xs p-3 rounded mb-2 bg-red-900/80 border border-red-500 text-red-200';
+                resultDiv.innerText = `✖ JAWABAN KURANG TEPAT. Jawaban benar: ${q.options[q.answer]}`;
+            }
+
+            document.getElementById('next-quiz-btn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQIndex = (currentQIndex + 1) % quizQuestions.length;
+            loadQuestion();
+        }
+
+        /* Fan Guestbook / LocalStorage logic */
+        const guestbookForm = document.getElementById('guestbook-form');
+        const guestbookMessages = document.getElementById('guestbook-messages');
+
+        function loadGuestbook() {
+            const saved = JSON.parse(localStorage.getItem('nirvana_tributes') || '[]');
+            if (saved.length === 0) {
+                guestbookMessages.innerHTML = `
+                    <p class="text-xs text-cream-300/60 font-mono italic">Belum ada pesan. Jadilah yang pertama memberikan tribute!</p>
+                `;
+                return;
+            }
+
+            guestbookMessages.innerHTML = saved.map(item => `
+                <div class="bg-maroon-900 border-l-2 border-gold-500 p-2 rounded font-mono text-xs">
+                    <span class="text-gold-500 font-bold">${escapeHtml(item.name)}</span>
+                    <p class="text-cream-200 font-sans text-xs mt-1">${escapeHtml(item.msg)}</p>
+                </div>
+            `).join('');
+        }
+
+        guestbookForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('gb-name').value.trim();
+            const msg = document.getElementById('gb-message').value.trim();
+
+            if (name && msg) {
+                const saved = JSON.parse(localStorage.getItem('nirvana_tributes') || '[]');
+                saved.unshift({ name, msg });
+                localStorage.setItem('nirvana_tributes', JSON.stringify(saved));
+                document.getElementById('gb-name').value = '';
+                document.getElementById('gb-message').value = '';
+                loadGuestbook();
+            }
+        });
+
+        function escapeHtml(text) {
+            return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+
+        // Initialize components on load
+        window.onload = function() {
+            loadQuestion();
+            loadGuestbook();
+        };
+    </script>
+</body>
+</html>
