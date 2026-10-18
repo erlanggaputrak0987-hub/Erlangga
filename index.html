@@ -189,21 +189,20 @@
 
             <!-- Main Band Title -->
             <h1 class="font-bodoni font-black text-6xl md:text-9xl text-gold-500 text-distressed uppercase tracking-tight mb-4 transform -skew-x-3">
-                NIRVANA
-            </h1>
+             NIRVANA </h1>
 
             <p class="font-marker text-xl md:text-3xl text-cream-200 mb-8 max-w-2xl leading-relaxed">
                 "Suara Sebuah Generasi & Revolusi Musik Grunge 90-an"
             </p>
 
-            <!-- Interactive Cassette Player Widget -->
+            <!-- Kasetnya well -->
             <div class="w-full max-w-xl bg-charcoal/90 border-2 border-gold-600 rounded-lg p-5 shadow-2xl backdrop-blur-sm relative">
                 <div class="flex items-center justify-between border-b border-maroon-700 pb-3 mb-4">
                     <div class="flex items-center gap-3">
                         <i class="fa-solid fa-tape text-gold-500 text-2xl"></i>
                         <span class="font-mono text-xs text-gold-500 tracking-wider">CASSETTE DECK SYSTEM - 90s ANALOG</span>
                     </div>
-                    <!-- Audio Wave Visualization -->
+                    <!-- GK tau animasi -->
                     <div id="wave-container" class="flex items-center gap-1 h-6">
                         <div class="wave-bar w-1 bg-gold-500 rounded-full paused"></div>
                         <div class="wave-bar w-1 bg-gold-500 rounded-full paused"></div>
@@ -214,7 +213,7 @@
                 </div>
 
                 <div class="flex flex-col sm:flex-row items-center gap-4">
-                    <!-- Cassette Window Graphic -->
+                    <!-- Ini apa anjir -->
                     <div class="w-full sm:w-1/3 bg-maroon-900 border border-gold-600/50 rounded p-2 flex justify-around items-center h-20">
                         <div id="cassette-reel-left" class="w-12 h-12 rounded-full border-4 border-dashed border-gold-500 flex items-center justify-center">
                             <div class="w-4 h-4 bg-cream-300 rounded-full"></div>
@@ -224,13 +223,17 @@
                         </div>
                     </div>
 
-                    <!-- Song Controls & Track Selector -->
+                    <!-- Tempat lagu laguna -->
                     <div class="w-full sm:w-2/3 flex flex-col gap-2">
+                        <!-- TAMBAH LAGU: buat option baru; value-nya harus sama persis dengan key di heroTrackFiles. -->
                         <select id="hero-track-select" class="bg-maroon-800 text-cream-200 border border-gold-600/60 rounded px-3 py-1.5 font-mono text-xs focus:outline-none focus:border-gold-500">
-                            <option value="teen-spirit">Smells Like Teen Spirit (Grunge Synth Riff)</option>
-                            <option value="come-as-you-are">Come As You Are (Chorus Bass Synth)</option>
-                            <option value="in-bloom">In Bloom (Heavy Beat Riff)</option>
-                            <option value="lithium">Lithium (Melodic Synth Demo)</option>
+                            <option value="teen-spirit">Smells Like Teen Spirit</option>
+                            <option value="come-as-you-are">Come As You Are</option>
+                            <option value="in-bloom">In Bloom</option>
+                            <option value="breed">Breed</option>
+                            <option value="drain-you">Drain You</option>
+                            <option value="serve-the-servants">Serve The Servants</option>
+                            <option value="you-know">You Know You're Right</option>
                         </select>
 
                         <div class="flex items-center justify-between gap-2 mt-2">
@@ -451,7 +454,7 @@
                                 <p class="text-cream-300 font-mono text-xs">DGC / Geffen Records</p>
                             </div>
                             <div class="relative my-4 flex items-center justify-center">
-                                <img src="https://i.pinimg.com/1200x/77/c8/de/77c8de0a3e06389c07c8278eb92306ae.jpg" alt="In Utero Album Cover" class="w-48 h-48 object-cover rounded shadow-lg border border-gold-600/30 filter sepia">
+                                <img src="https://i.pinimg.com/1200x/77/c8/de/77c8de0a3e06389c07c8278eb92306ae.jpg      " alt="In Utero Album Cover" class="w-48 h-48 object-cover rounded shadow-lg border border-gold-600/30 filter sepia">
                                 <i class="fa-solid fa-arrows-rotate absolute text-cream-100 text-2xl bg-charcoal/70 p-2 rounded-full"></i>
                             </div>
                             <div class="text-center font-mono text-xs text-gold-400">
@@ -619,23 +622,23 @@
                     <div class="w-4 h-4 rounded-full bg-red-600 shadow-[0_0_10px_#ff0000]"></div>
                 </div>
 
-                <!-- Sound Buttons Grid -->
+                <!-- Chord Smells like teen spirit -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <button onclick="playSynthesizedSound(110, 'sawtooth', 0.8)" class="bg-maroon-700 hover:bg-maroon-600 border-2 border-gold-500 text-gold-400 font-mono py-6 rounded-lg active:translate-y-1 transition font-bold shadow-md">
                         <i class="fa-solid fa-bolt block text-2xl mb-2"></i>
-                        POWER CHORD A
+                        POWER CHORD F
                     </button>
                     <button onclick="playSynthesizedSound(146.83, 'sawtooth', 0.8)" class="bg-maroon-700 hover:bg-maroon-600 border-2 border-gold-500 text-gold-400 font-mono py-6 rounded-lg active:translate-y-1 transition font-bold shadow-md">
                         <i class="fa-solid fa-bolt block text-2xl mb-2"></i>
-                        POWER CHORD D
+                        POWER CHORD Bb
                     </button>
                     <button onclick="playSynthesizedSound(164.81, 'square', 0.6)" class="bg-maroon-700 hover:bg-maroon-600 border-2 border-gold-500 text-gold-400 font-mono py-6 rounded-lg active:translate-y-1 transition font-bold shadow-md">
                         <i class="fa-solid fa-wave-square block text-2xl mb-2"></i>
-                        FEEDBACK FUZZ
+                        Power Cord G#
                     </button>
                     <button onclick="playSynthesizedSound(82.41, 'triangle', 1.0)" class="bg-maroon-700 hover:bg-maroon-600 border-2 border-gold-500 text-gold-400 font-mono py-6 rounded-lg active:translate-y-1 transition font-bold shadow-md">
                         <i class="fa-solid fa-drum block text-2xl mb-2"></i>
-                        HEAVY BASS SLAP
+                        Power Chord C#
                     </button>
                 </div>
             </div>
@@ -749,7 +752,7 @@
         function switchEra(eraKey) {
             document.querySelectorAll('.era-btn').forEach(btn => {
                 btn.classList.remove('active', 'bg-maroon-700', 'border-2', 'border-gold-500', 'text-gold-500');
-                btn.classList.add('bg-maroon-900', 'border', 'border-gold-600/30', 'text-cream-200');
+                btn.classList.add('bg-maroon-900', 'border', 'border-gold-600/30', 'text-cream- 200');
             });
             const activeBtn = document.getElementById(`btn-${eraKey}`);
             activeBtn.classList.add('active', 'bg-maroon-700', 'border-2', 'border-gold-500', 'text-gold-500');
@@ -802,10 +805,23 @@
             `;
         }
 
-        /* Web Audio API Synthetic Cassette Player & Soundboard */
+        /* Local-file Cassette Player & Web Audio Soundboard */
         let audioCtx = null;
         let isPlayingHero = false;
-        let activeOscillator = null;
+        // TAMBAH/PERBAIKI AUDIO: key harus sama dengan value pada option di atas.
+        // Path dimulai dari folder Audio/; samakan penulisan nama file, termasuk huruf besar dan ekstensi.
+        // Contoh: value="lagu-baru" -> 'lagu-baru': './Audio/lagu-baru.mp3'
+        const heroTrackFiles = {
+            'teen-spirit': './Audio/teen%20spirit.mp3',
+            'come-as-you-are': './Audio/as-you-are.mp3',
+            'in-bloom': './Audio/Inbloom.mp3',
+            'breed': './Audio/breed%20%281%29.mp3',
+            'drain-you': './Audio/drain-you.mp3',
+            'serve-the-servants': './Audio/serve%20the%20servants.mp3',
+            'you-know': './Audio/Nirvana-You-Know-You-re-Right-_LP-Version_.mp3'
+        };
+        const heroAudio = new Audio();
+        heroAudio.preload = 'metadata';
 
         function initAudio() {
             if (!audioCtx) {
@@ -820,7 +836,6 @@
         const reelRight = document.getElementById('cassette-reel-right');
 
         function toggleHeroPlay() {
-            initAudio();
             if (isPlayingHero) {
                 stopHeroAudio();
             } else {
@@ -828,15 +843,30 @@
             }
         }
 
-        function startHeroAudio() {
+        async function startHeroAudio() {
+            const selectedTrack = document.getElementById('hero-track-select').value;
+            const trackFile = heroTrackFiles[selectedTrack];
+            if (!trackFile) return;
+
+            heroAudio.pause();
+            heroAudio.src = new URL(trackFile, window.location.href).href;
+            heroAudio.load();
+            heroAudio.currentTime = 0;
+
+            try {
+                await heroAudio.play();
+            } catch (error) {
+                stopHeroAudio();
+                document.getElementById('play-btn-text').innerText = 'FILE AUDIO TIDAK DITEMUKAN';
+                console.error(`Gagal memutar ${trackFile}:`, error);
+                return;
+            }
+
             isPlayingHero = true;
             document.getElementById('play-btn-text').innerText = 'HENTIKAN';
             waveBars.forEach(bar => bar.classList.remove('paused'));
             reelLeft.classList.add('animate-spin-slow');
             reelRight.classList.add('animate-spin-slow');
-
-            // Play simple synth melody loop using Web Audio
-            playSynthRiff();
         }
 
         function stopHeroAudio() {
@@ -845,30 +875,16 @@
             waveBars.forEach(bar => bar.classList.add('paused'));
             reelLeft.classList.remove('animate-spin-slow');
             reelRight.classList.remove('animate-spin-slow');
-            if (activeOscillator) {
-                activeOscillator.stop();
-                activeOscillator = null;
-            }
-        }
-
-        function playSynthRiff() {
-            if (!isPlayingHero) return;
-            const trackSelect = document.getElementById('hero-track-select').value;
-            let freqs = [110, 110, 146.83, 130.81]; // Default Teen Spirit style riff
-            if (trackSelect === 'come-as-you-are') freqs = [146.83, 146.83, 155.56, 164.81];
-
-            let step = 0;
-            const playStep = () => {
-                if (!isPlayingHero) return;
-                playSynthesizedSound(freqs[step % freqs.length], 'sawtooth', 0.2);
-                step++;
-                setTimeout(playStep, 400);
-            };
-            playStep();
+            heroAudio.pause();
+            heroAudio.currentTime = 0;
         }
 
         heroPlayBtn.addEventListener('click', toggleHeroPlay);
         heroStopBtn.addEventListener('click', stopHeroAudio);
+        document.getElementById('hero-track-select').addEventListener('change', () => {
+            if (isPlayingHero) startHeroAudio();
+        });
+        heroAudio.addEventListener('ended', stopHeroAudio);
 
         function playSynthesizedSound(freq, type = 'sawtooth', duration = 0.5) {
             initAudio();
